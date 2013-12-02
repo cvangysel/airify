@@ -1,0 +1,22 @@
+{
+  "name": "airify",
+  "description": "Spotify to AirPlay connector.",
+  "homepage": "https://github.com/cvangysel/airtify",
+  "author": "Christophe Van Gysel (http://chri.stophr.be)",
+  "dependencies": {
+    "airtunes": ">= 0.1.5",
+    "libspotify": ">= 0.2.2",
+    "optimist": ">= 0.6.0",
+    "underscore": ">= 1.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cvangysel/airify.git"
+  },
+  "files": [
+    "airtify.js",
+    "README.md",
+    "AUTHORS"
+  ],
+  "engine": "node >= 0.10.22"
+}
