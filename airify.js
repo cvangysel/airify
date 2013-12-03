@@ -10,10 +10,18 @@ var assert = require('assert'),
       .string('spotify_password')
       .string('spotify_playlist')
       .boolean('shuffle')
-      .default('host', 'localhost')
-      .default('port', 5000)
+      .default('airplay_host', 'localhost')
       .default('volume', 50)
-      .demand(['airplay_host', 'spotify_user', 'spotify_password', 'spotify_playlist'])
+      .describe('airplay_host', 'IP address of host running AirPlay service.')
+      .describe('airplay_port', 'Port number of AirPlay service, usually port 5000 (Apple devices) or port 1024 (Bose SoundTouch).')
+      .describe('airplay_password', 'Password required for AirPlay service.')
+      .describe('spotify_user', 'User name of Spotify Premium account.')
+      .describe('spotify_password', 'Password for Spotify Premium account.')
+      .describe('spotify_playlist', 'Spotify playlist URI.')
+      .describe('volume', 'Sets AirPlay device volume, between 0 and 100.')
+      .describe('shuffle', 'Toggle to enable track shuffling.')
+      .demand(['airplay_host', 'airplay_port', 'spotify_user', 'spotify_password', 'spotify_playlist'])
+      .check(function(argv) { return argv.volume >= 0 && argv.volume <= 100;})
       .argv;
 
 var device = airtunes.add(
