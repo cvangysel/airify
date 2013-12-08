@@ -7,7 +7,8 @@
     "airtunes": ">= 0.1.5",
     "libspotify": ">= 0.2.2",
     "optimist": ">= 0.6.0",
-    "underscore": ">= 1.5.2"
+    "underscore": ">= 1.5.2",
+    "expire": ">= 0.4.5"
   },
   "repository": {
     "type": "git",
